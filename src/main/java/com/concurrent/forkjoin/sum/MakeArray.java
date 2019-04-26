@@ -17,7 +17,7 @@ public class MakeArray {
         int[] result = new int[ARRAY_LENGTH];
         for (int i = 0; i < ARRAY_LENGTH; i++) {
             //用随机数填充数组
-            result[i] = 100;
+            result[i] = r.nextInt(ARRAY_LENGTH * 3);
         }
         return result;
     }
