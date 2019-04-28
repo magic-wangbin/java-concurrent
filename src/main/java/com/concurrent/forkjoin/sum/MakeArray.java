@@ -7,7 +7,9 @@ import java.util.Random;
  */
 public class MakeArray {
     //固定数组的长度
-    public static final int ARRAY_LENGTH = 400;
+    public static final int ARRAY_LENGTH = 40;
+
+    public final static int THRESHOLD = 47;
 
     //生成数组的方法
     public static int[] makeArray() {
