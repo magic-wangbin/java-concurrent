@@ -22,7 +22,7 @@ public class MergeTest {
             System.out.println(a);
         }
 
-        //单线程进行排序
+        //使用fork join进行排序
         System.out.println("fork_join 进行排序start........");
         Long startTime2 = System.currentTimeMillis();
         ForkJoinPool pool = new ForkJoinPool();
