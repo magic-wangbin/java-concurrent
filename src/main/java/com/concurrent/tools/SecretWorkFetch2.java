@@ -65,10 +65,8 @@ public class SecretWorkFetch2 {
                             deque.putLast(new Work(Thread.currentThread().getId(), workId.getAndIncrement()));
                         }
                     }
-                    //System.out.println(" yss otherWork.isEmpty(): "+otherWork.isEmpty());
                     if (deque.isEmpty()) {
                         if (!otherWork.isEmpty()) {
-//                            System.out.println("otherWork is run:！！！！！！！！！！！！！！！！！");
                             otherWork.takeLast().run();
                         }
                     } else {
@@ -89,11 +87,9 @@ public class SecretWorkFetch2 {
     public static void main(String[] args) {
         LinkedBlockingDeque<Work> deque = new LinkedBlockingDeque<Work>();
         LinkedBlockingDeque<Work> other = new LinkedBlockingDeque<Work>();
-        //new Thread(new ConsumerAndProducer(deque, other,new AtomicInteger(0))).start();
-        new Thread(new ConsumerAndProducer(deque, other,new AtomicInteger(0))).start();
+        new Thread(new ConsumerAndProducer(deque, other, new AtomicInteger(0))).start();
 
-       // new Thread(new ConsumerAndProducer(other, deque,new AtomicInteger(0))).start();
-        new Thread(new ConsumerAndProducer(other, deque,new AtomicInteger(0))).start();
+        new Thread(new ConsumerAndProducer(other, deque, new AtomicInteger(0))).start();
 
     }
 
