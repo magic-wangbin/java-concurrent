@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchTest {
 
-    public static final CountDownLatch countDownLatch = new CountDownLatch(6);
+    private static final CountDownLatch countDownLatch = new CountDownLatch(6);
 
     /**
      * 该任务一次latch减2

@@ -9,21 +9,17 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class LockTest {
 
-    static CountDownLatch countDownLatch = new CountDownLatch(2);
+    private static CountDownLatch countDownLatch = new CountDownLatch(2);
 
     private Lock lock = new ReentrantLock();
     //要锁的变量
     private int age = 100;
 
-    public int getAge() {
+    private int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void increase() {
+    private void increase() {
         for (int i = 0; i < 10000; i++) {
             try {
                 lock.lock();
@@ -37,7 +33,7 @@ public class LockTest {
         countDownLatch.countDown();
     }
 
-    public void reduce() {
+    private void reduce() {
 
         for (int i = 0; i < 10000; i++) {
             try {
@@ -50,11 +46,11 @@ public class LockTest {
         countDownLatch.countDown();
     }
 
-    public static class IncreaseTask implements Runnable {
+    private static class IncreaseTask implements Runnable {
 
         private LockTest lockTest;
 
-        public IncreaseTask(LockTest lockTest) {
+        private IncreaseTask(LockTest lockTest) {
             this.lockTest = lockTest;
         }
 
@@ -64,11 +60,11 @@ public class LockTest {
         }
     }
 
-    public static class ReduceTask implements Runnable {
+    private static class ReduceTask implements Runnable {
 
         private LockTest lockTest;
 
-        public ReduceTask(LockTest lockTest) {
+        private ReduceTask(LockTest lockTest) {
             this.lockTest = lockTest;
         }
 
@@ -85,11 +81,7 @@ public class LockTest {
         new Thread(new IncreaseTask(lockTest)).start();
         new Thread(new ReduceTask(lockTest)).start();
 
-        try {
-            countDownLatch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        countDownLatch.await();
 
         System.out.println(lockTest.getAge());
     }
