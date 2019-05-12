@@ -1,4 +1,4 @@
-package com.concurrent.lock;
+package com.concurrent.lock.reentrant;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Lock;
