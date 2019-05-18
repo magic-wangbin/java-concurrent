@@ -1,7 +1,7 @@
-package com.concurrent.safeclass;
+package com.concurrent.chaper7.safeclass;
 
 /**
- * 无状态的类 -> UserVo是外部传入，不属于此类的持有属性
+ * 无状态的类
  */
 public class StatelessClass {
 	public int service(int a,int b){

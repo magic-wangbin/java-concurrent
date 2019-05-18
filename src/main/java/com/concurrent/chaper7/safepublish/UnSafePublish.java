@@ -1,4 +1,4 @@
-package com.concurrent.safeclass;
+package com.concurrent.chaper7.safepublish;
 
 import java.util.ArrayList;
 import java.util.List;

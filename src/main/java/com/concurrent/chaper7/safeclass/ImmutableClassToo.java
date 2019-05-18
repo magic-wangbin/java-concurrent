@@ -1,13 +1,13 @@
-package com.concurrent.safeclass;
+package com.concurrent.chaper7.safeclass;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 类不可变
+ * 类不可变--事实不可变
  */
 public class ImmutableClassToo {
-    private List<Integer> list = new ArrayList<>(3);
+    private final List<Integer> list = new ArrayList<>(3);
 
     public ImmutableClassToo() {
         list.add(1);

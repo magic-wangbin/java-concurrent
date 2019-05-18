@@ -1,9 +1,9 @@
-package com.concurrent.safeclass;
+package com.concurrent.chaper7.safepublish;
 
 /**
  * 类说明：
  */
-public class UserVo {
+public final class FinalUserVo {
     private int age;
 
     public int getAge() {

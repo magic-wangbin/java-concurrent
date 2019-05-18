@@ -1,7 +1,7 @@
-package com.concurrent.safeclass;
+package com.concurrent.chaper7.safepublish;
 
 /**
- * 安全的发布
+ * 演示基本类型的发布
  */
 public class SafePublish {
 	private int i;
